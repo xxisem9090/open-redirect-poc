@@ -1,0 +1,470 @@
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #66e8ff;
+    text-decoration: underline;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #ff4444;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+.researcher {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #00d4ff;
+}
+
+/* ===== Cards ===== */
+.card {
+    background: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: #3a3a3a;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== Steps ===== */
+.step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #ff4444;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.step code {
+    background: #1a1a1a;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #ffaa00;
+}
+
+/* ===== Input Groups ===== */
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00d4ff;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.btn-primary {
+    background: #ff4444;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+    background: #3a3a3a;
+}
+
+.btn-success {
+    background: #00c853;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #009624;
+}
+
+/* ===== Code Blocks ===== */
+.code-block {
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.code-block code {
+    font-family: inherit;
+}
+
+.copy-code-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #2a2a2a;
+    color: #fff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.copy-code-btn:hover {
+    background: #444;
+}
+
+/* ===== Result Card ===== */
+.result-card {
+    border-color: #ff4444;
+    background: #1a0a0a;
+}
+
+.result-card h2 {
+    color: #ff4444;
+}
+
+.result-content {
+    padding: 12px;
+    background: #0d0d0d;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 24px 0;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+footer p:first-child {
+    color: #ff6666;
+}
+
+/* ===== PHISHING PAGE ===== */
+.phishing-page {
+    background: #0a0a0a;
+}
+
+.phishing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.phishing-card {
+    max-width: 600px;
+    width: 100%;
+    background: #151515;
+    border: 2px solid #ff4444;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 60px rgba(255, 68, 68, 0.1);
+}
+
+.phishing-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.phishing-header h1 {
+    color: #ff4444;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.phishing-header p {
+    color: #888;
+}
+
+.phishing-body {
+    padding: 20px 0;
+}
+
+.alert-box {
+    background: #2a0a0a;
+    border-left: 4px solid #ff4444;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.alert-box strong {
+    color: #ff4444;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.alert-box p {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.info-box {
+    background: #0d0d0d;
+    padding: 16px 18px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #222;
+}
+
+.info-box h3 {
+    color: #00d4ff;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.info-box ol, .info-box ul {
+    padding-left: 20px;
+    color: #ccc;
+}
+
+.info-box li {
+    margin-bottom: 4px;
+}
+
+.info-box code {
+    background: #1a1a1a;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: #ffaa00;
+}
+
+.demo-form {
+    background: #1a1a1a;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 16px 0;
+    border: 1px solid #333;
+}
+
+.demo-form h3 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff4444;
+}
+
+.demo-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.demo-form button:hover {
+    background: #cc0000;
+}
+
+.demo-note {
+    text-align: center;
+    color: #ff6666;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.request-info {
+    font-size: 0.9rem;
+    color: #aaa;
+    word-break: break-all;
+}
+
+.request-info strong {
+    color: #00d4ff;
+}
+
+.phishing-footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid #222;
+    color: #666;
+}
+
+.phishing-footer a {
+    color: #00d4ff;
+    margin: 0 8px;
+}
+
+.phishing-footer a:hover {
+    text-decoration: underline;
+}
+
+.phishing-footer span {
+    color: #333;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        padding: 12px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .phishing-card {
+        padding: 18px;
+    }
+}

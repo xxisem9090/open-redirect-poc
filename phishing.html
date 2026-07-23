@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ Phishing Demo - Open Redirect PoC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="phishing-page">
+    <div class="phishing-container">
+        <div class="phishing-card">
+            <div class="phishing-header">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M12 8v4"/>
+                    <path d="M12 16h.01"/>
+                </svg>
+                <h1>⚠️ Phishing Simulation</h1>
+                <p>This page demonstrates an Open Redirect attack</p>
+            </div>
+
+            <div class="phishing-body">
+                <div class="alert-box">
+                    <strong>🔴 You've been redirected!</strong>
+                    <p>This is a simulation of an Open Redirect vulnerability.</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📊 What happened?</h3>
+                    <ol>
+                        <li>You clicked a link on a trusted website</li>
+                        <li>The <code>Referer</code> header was manipulated</li>
+                        <li>You were redirected to this phishing page</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h3>⚠️ Real Impact</h3>
+                    <ul>
+                        <li><strong>Phishing:</strong> Steal credentials</li>
+                        <li><strong>Malware:</strong> Drive-by downloads</li>
+                        <li><strong>Credential Theft:</strong> Fake login pages</li>
+                    </ul>
+                </div>
+
+                <div class="demo-form">
+                    <h3>🎭 Fake Login Demo</h3>
+                    <form id="phishing-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label>Username / Email</label>
+                            <input type="text" placeholder="Enter your username" value="demo@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter your password" value="••••••••">
+                        </div>
+                        <button type="submit" onclick="alert('⚠️ CREDENTIALS CAPTURED! This is a demo.')">
+                            🔐 Login (Demo)
+                        </button>
+                    </form>
+                    <p class="demo-note">⚠️ Credentials would be sent to attacker's server</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📊 Request Information</h3>
+                    <div class="request-info" id="request-info">
+                        <p><strong>Referer:</strong> <span id="referer-display">Not captured</span></p>
+                        <p><strong>User-Agent:</strong> <span id="useragent-display">Not captured</span></p>
+                        <p><strong>Redirect URL:</strong> <span id="redirect-display">Not captured</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phishing-footer">
+                <a href="index.html">← Back to PoC</a>
+                <span>|</span>
+                <a href="https://github.com/yourusername/open-redirect-poc" target="_blank">📁 GitHub</a>
+                <span>|</span>
+                <a href="#" onclick="alert('⚠️ This is a demo. No data is actually sent.')">🔒 Privacy</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
